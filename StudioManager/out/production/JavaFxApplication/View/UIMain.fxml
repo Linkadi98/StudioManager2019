@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1280.0" styleClass="border-pane" stylesheets="@../Css/StyleSheet.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <top>
+      <HBox alignment="TOP_RIGHT" prefHeight="39.0" prefWidth="1280.0" style="-fx-background-color: #E7EAED;" styleClass="hbox" stylesheets="@../Css/StyleSheet.css" BorderPane.alignment="CENTER">
+         <children>
+            <Label prefHeight="39.0" prefWidth="152.0" text="Studio Manager" textFill="#393535">
+               <font>
+                  <Font name="Segoe UI Bold" size="15.0" />
+               </font>
+            </Label>
+            <Pane prefHeight="39.0" prefWidth="865.0" />
+            <Pane prefHeight="39.0" prefWidth="212.0">
+               <children>
+                  <Circle fill="#ebedee" layoutX="64.0" layoutY="20.0" radius="16.0" stroke="#b91313" strokeType="INSIDE" />
+                  <ImageView fitHeight="21.0" fitWidth="19.0" layoutX="179.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Icons/icons8_Multiply_48px.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="22.0" fitWidth="23.0" layoutX="141.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Icons/icons8_Minus_48px_1.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="14.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
+                     <image>
+                        <Image url="@../Icons/icons8_Forward_48px.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+         </children></HBox>
+   </top>
+   <left>
+      <HBox prefHeight="734.0" prefWidth="50.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox prefHeight="729.0" prefWidth="47.0" style="-fx-background-color: #F4F5F7;" styleClass="vbox" stylesheets="@../Css/StyleSheet.css">
+               <children>
+                  <Pane prefHeight="56.0" prefWidth="52.0" />
+                  <JFXButton prefHeight="42.0" prefWidth="27.0">
+                     <graphic>
+                        <ImageView fitHeight="35.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Icons/icons8_Camera_48px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+                  <Pane prefHeight="6.0" prefWidth="52.0" />
+                  <JFXButton prefHeight="40.0" prefWidth="52.0">
+                     <graphic>
+                        <ImageView fitHeight="35.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Icons/icons8_Customer_48px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+                  <Pane prefHeight="8.0" prefWidth="52.0" />
+                  <JFXButton prefHeight="40.0" prefWidth="52.0">
+                     <graphic>
+                        <ImageView fitHeight="35.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Icons/icons8_Member_48px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+                  <Pane prefHeight="8.0" prefWidth="52.0" />
+                  <JFXButton prefHeight="40.0" prefWidth="52.0">
+                     <graphic>
+                        <ImageView fitHeight="35.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Icons/icons8_Package_48px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+                  <Pane prefHeight="8.0" prefWidth="52.0" />
+                  <JFXButton prefHeight="40.0" prefWidth="52.0">
+                     <graphic>
+                        <ImageView fitHeight="35.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Icons/icons8_Purchase_Order_48px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+                  <Pane prefHeight="8.0" prefWidth="52.0" />
+                  <JFXButton prefHeight="40.0" prefWidth="52.0">
+                     <graphic>
+                        <ImageView fitHeight="35.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Icons/icons8_Receipt_48px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+                  <Pane prefHeight="8.0" prefWidth="52.0" />
+                  <JFXButton prefHeight="40.0" prefWidth="52.0">
+                     <graphic>
+                        <ImageView fitHeight="35.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Icons/icons8_Increase_48px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+                  <Pane prefHeight="291.0" prefWidth="52.0" />
+                  <JFXButton prefHeight="40.0" prefWidth="52.0" style="-fx-border-radius: 0 0 0 9; -fx-background-radius: 0 0 0 9;">
+                     <graphic>
+                        <ImageView fitHeight="35.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Icons/icons8_Settings_48px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+               </children></VBox>
+         </children>
+      </HBox>
+   </left>
+</BorderPane>

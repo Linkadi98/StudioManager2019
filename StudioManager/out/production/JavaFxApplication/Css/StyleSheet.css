@@ -1,0 +1,32 @@
+.border-pane {
+    -fx-border-radius: 9 9 9 9;
+    -fx-background-radius: 9 9 9 9;
+    -fx-background-color: white;
+}
+
+.hbox {
+    -fx-border-radius: 9 9 0 0;
+    -fx-background-radius: 9 9 0 0;
+}
+
+.vbox {
+    -fx-border-radius: 0 0 0 9;
+    -fx-background-radius: 0 0 0 9;
+}
+
+.jfx-button {
+    -fx-content-display: center;
+    -fx-background-color: #F4F5F7;
+    -fx-background-radius: 0;
+    -fx-text-fill: white;
+}
+
+.jfx-button:focused {
+    -fx-background-color: #ee543a, #CFD8DC;
+    -fx-background-insets: 0, 0 0 0 4;
+}
+
+/*.jfx-button:hover {*/
+    /*-fx-background-color: #CFD8DC;*/
+/*}*/
+

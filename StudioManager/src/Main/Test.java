@@ -25,11 +25,11 @@ public class Test extends Application {
         JFXHamburger show = new JFXHamburger();
         show.setPadding(new Insets(10, 5, 10, 5));
         JFXRippler rippler = new JFXRippler(show, RipplerMask.CIRCLE, RipplerPos.BACK);
-        Pane pane = new Pane();
-//        JFXListView<Label> list = new JFXListView<>();
-//        for (int i = 1; i < 5; i++) {
-//            list.getItems().add(new Label("Item " + i));
-//        }
+
+        JFXListView<Label> list = new JFXListView<>();
+        for (int i = 1; i < 5; i++) {
+            list.getItems().add(new Label("Item " + i));
+        }
 
         AnchorPane container = new AnchorPane();
         container.getChildren().add(rippler);
@@ -39,7 +39,7 @@ public class Test extends Application {
         StackPane main = new StackPane();
         main.getChildren().add(container);
 
-        JFXPopup popup = new JFXPopup(pane);
+        JFXPopup popup = new JFXPopup(list);
         rippler.setOnMouseClicked(e -> popup.show(rippler, PopupVPosition.TOP, PopupHPosition.LEFT));
 
         final Scene scene = new Scene(main, 800, 800);

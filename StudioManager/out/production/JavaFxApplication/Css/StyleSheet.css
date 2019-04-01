@@ -1,19 +1,20 @@
 
 .vbox {
-    -fx-border-radius: 0 0 0 9;
-    -fx-background-radius: 0 0 0 9;
+    /*-fx-border-radius: 0 0 0 9;*/
+    /*-fx-background-radius: 0 0 0 9;*/
 }
 
 .button {
-    -fx-content-display: center;
-    -fx-background-color: #F4F5F7;
+    /*-fx-content-display: left;*/
+    -fx-background-color: #344955;
     -fx-background-radius: 0;
     -fx-text-fill: white;
 }
 
 .button:focused {
-    -fx-background-color: #f44336, #CFD8DC;
-    -fx-background-insets: 0, 0 0 0 4;
+    /*-fx-background-color: #f44336, #6A7982;*/
+    /*-fx-background-insets: 0, 0 0 0 4;*/
+
 }
 
 .pane {

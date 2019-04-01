@@ -1,12 +1,12 @@
 .hbox {
-    -fx-border-radius: 9 9 0 0;
-    -fx-background-radius: 9 9 0 0;
-    -fx-border-color: transparent transparent gray transparent;
+    -fx-background-color: #D2DBE0;
 }
 
 .button {
     -fx-background-color: transparent;
     -fx-content-display: center;
+    -fx-border-radius: 0 0 0 0;
+    -fx-background-radius: 0 0 0 0;
 }
 .button:hover {
     -fx-background-color: #ffcdd2;

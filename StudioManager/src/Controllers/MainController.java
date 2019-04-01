@@ -1,18 +1,20 @@
 package Controllers;
 
-import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXPopup;
-import com.jfoenix.controls.JFXRippler;
+import com.jfoenix.controls.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
+import javafx.scene.paint.Paint;
+import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 import javafx.util.Pair;
 
@@ -28,19 +30,61 @@ public class MainController implements Initializable {
     public StackPane stackPane;
     public BorderPane borderPane;
     public JFXButton information;
+    public HBox menuBar;
+    public Circle avatar;
+    public javafx.scene.image.ImageView overViewImage;
+    public JFXButton overViewButton;
+    public javafx.scene.image.ImageView employeeImage;
+    public JFXButton employeeButton;
+    public javafx.scene.image.ImageView customerPartnerImage;
+    public JFXButton customerPartnerButton;
+    public javafx.scene.image.ImageView packageImage;
+    public JFXButton packageButton;
+    public javafx.scene.image.ImageView orderImage;
+    public JFXButton orderButton;
+    public javafx.scene.image.ImageView formImage;
+    public JFXButton formButton;
+    public javafx.scene.image.ImageView reportImage;
+    public JFXButton reportButton;
+
     private Delta delta = new Delta();
-    private Pane overViewPane;
-    private ScrollPane scrollPane;
+    private ScrollPane overViewScrollPane;
+    private ScrollPane employeeScrollPane;
+    private JFXDrawersStack drawersStack;
+    private JFXDrawer customerPartner;
+    private List<ImageView> imageViewList;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        scrollPane = new ScrollPane();
+        drawersStack = new JFXDrawersStack();
+        customerPartner = new JFXDrawer();
+        Pane contentPane = new Pane();
+        imageViewList = new ArrayList<>();
+        contentPane.setPrefSize(100, 100);
+        Pane sidePane = new Pane();
+
         try {
             initPanes();
         } catch (IOException e) {
             e.printStackTrace();
         }
-//        borderPane.setCenter(stackPane);
+
+        drawersStack.setContent(stackPane);
+        borderPane.setCenter(drawersStack);
+        customerPartner.setResizeContent(true);
+        customerPartner.setDirection(JFXDrawer.DrawerDirection.LEFT);
+        customerPartner.setCache(true);
+        customerPartner.setDefaultDrawerSize(100);
+        customerPartner.setSidePane(sidePane);
+
+        imageViewList.add(orderImage);
+        imageViewList.add(overViewImage);
+        imageViewList.add(customerPartnerImage);
+        imageViewList.add(employeeImage);
+        imageViewList.add(formImage);
+        imageViewList.add(packageImage);
+        imageViewList.add(reportImage);
+
     }
 
 
@@ -72,16 +116,32 @@ public class MainController implements Initializable {
     }
 
     public void onOverViewAction(ActionEvent actionEvent) {
-//        showPane(overViewPane, stackPane);
-        scrollPane.setVisible(true);
-
+        showPane(overViewScrollPane, stackPane);
     }
 
     public void onInfoAction(ActionEvent actionEvent) {
-//        JFXRippler rippler = new JFXRippler(information, JFXRippler.RipplerMask.CIRCLE, JFXRippler.RipplerPos.BACK);
-//        Pane pane = new Pane();
-//        JFXPopup popup = new JFXPopup(pane);
-//        rippler.setOnMouseClicked(e -> popup.show(rippler, JFXPopup.PopupVPosition.TOP, JFXPopup.PopupHPosition.LEFT));
+
+    }
+
+    public void employeeOnAction(ActionEvent actionEvent) {
+        showPane(employeeScrollPane, stackPane);
+    }
+
+    public void customerPartnerOnAction(ActionEvent actionEvent) {
+        drawersStack.toggle(customerPartner);
+    }
+
+    public void packageOnAction(ActionEvent actionEvent) {
+    }
+
+    public void orderOnAction(ActionEvent actionEvent) {
+    }
+
+    public void formOnAction(ActionEvent actionEvent) {
+    }
+
+    public void reportOnAction(ActionEvent actionEvent) {
+        drawersStack.toggle(customerPartner);
     }
 
     class Delta {
@@ -89,24 +149,28 @@ public class MainController implements Initializable {
     }
 
     private void initPanes () throws IOException {
-        overViewPane = new Pane();
-        List<Pair<Pane, String> > panes = new ArrayList<>();
-        Pair<Pane, String> pair1 = new Pair<>(overViewPane, "/View/UIOverview.fxml");
-        panes.add(pair1);
-        for(Pair<Pane, String> temp: panes) {
+        overViewScrollPane = new ScrollPane();
+        employeeScrollPane = new ScrollPane();
+        List<Pair<ScrollPane, String> > scrollPanes = new ArrayList<>();
+        Pair<ScrollPane, String> pair1 = new Pair<>(overViewScrollPane, "/View/UIOverview.fxml");
+        Pair<ScrollPane, String> pair2 = new Pair<>(employeeScrollPane, "/View/UIEmployee.fxml");
+        scrollPanes.add(pair1);
+        scrollPanes.add(pair2);
+        for(Pair<ScrollPane, String> temp: scrollPanes) {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(temp.getValue()));
-            temp.getKey().getChildren().add(loader.load());
-//            stackPane.getChildren().add(temp.getKey());
+            Pane tempPane = new Pane();
+            tempPane.getChildren().add(loader.load());
+            temp.getKey().setContent(tempPane);
+            temp.getKey().getStylesheets().add(getClass().getResource("/Css/ScrollPaneStyleSheet.css").toExternalForm());
+            stackPane.getChildren().add(temp.getKey());
         }
-        scrollPane.getStylesheets().add(getClass().getResource("/Css/ScrollPaneStyleSheet.css").toExternalForm());
-        scrollPane.setContent(overViewPane);
-        stackPane.getChildren().add(scrollPane);
+
         for(Node node: stackPane.getChildren()) {
             node.setVisible(false);
         }
     }
 
-    private void showPane (Pane pane, StackPane stackPane) {
+    private void showPane (ScrollPane pane, StackPane stackPane) {
         for(Node temp: stackPane.getChildren()) {
             if(pane == temp) {
                 temp.setVisible(true); // showing content
@@ -116,4 +180,15 @@ public class MainController implements Initializable {
             }
         }
     }
+
+    private void changeColor(ImageView imageView, String url, List<ImageView> imageViewList) {
+        Image image = new Image(url);
+        imageView.setImage(image);
+    }
+
+    private void rechangeColor(ImageView imageView, String url) {
+        Image image = new Image(url);
+        imageView.setImage(image);
+    }
+
 }

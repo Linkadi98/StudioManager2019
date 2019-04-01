@@ -1,0 +1,35 @@
+.expand-button {
+    /*-fx-background-color: orange;*/
+    -fx-background-radius: 28 28 28 28;
+    -fx-border-radius: 28 28 28 28;
+    -fx-border-color: transparent;
+    -fx-border-width: 3 3 3 3;
+    -fx-content-display: center;
+}
+
+.add-button {
+    /*-fx-background-color: #b2ff59;*/
+    -fx-background-radius: 28 28 28 28;
+    -fx-border-radius: 28 28 28 28;
+    -fx-border-color: transparent;
+    -fx-border-width: 3 3 3 3;
+    -fx-content-display: center;
+}
+
+.delete-button {
+     /*-fx-background-color: #ff5252;*/
+     -fx-background-radius: 28 28 28 28;
+     -fx-border-radius: 28 28 28 28;
+     -fx-border-color: transparent;
+     -fx-border-width: 3 3 3 3;
+    -fx-content-display: center;
+ }
+
+.update-button {
+    /*-fx-background-color: #29b6f6;*/
+    -fx-background-radius: 28 28 28 28;
+    -fx-border-radius: 28 28 28 28;
+    -fx-border-color: transparent;
+    -fx-border-width: 3 3 3 3;
+    -fx-content-display: center;
+}

@@ -14,7 +14,7 @@
     -fx-padding: 5 2 5 2;
 }
 
-.scroll-pane .coner {
+.scroll-pane .corner {
     -fx-background-radius: 0 0 9 0;
     -fx-border-radius: 0 0 9 0;
 }
@@ -50,4 +50,9 @@
 /* Left Arrow */
 .scroll-bar:horizontal > .decrement-button > .decrement-arrow {
     -fx-shape: "M214 0l0 428l-214 -214l214 -214z";
+}
+
+.scroll-pane {
+    -fx-background-radius: 0 0 9 0;
+    -fx-border-radius: 0 0 9 0;
 }
